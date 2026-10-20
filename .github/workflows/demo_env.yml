@@ -10,4 +10,5 @@ jobs:
           echo "BUILT_AT=$(date '+%F')" >> "$GITHUB_ENV"
           echo "같은 스텝: [$BUILT_AT]"
       - name: 다음 스텝에서 읽기
-        run: echo "다음 스텝: [$BUILT_AT]"
+        run: |
+          echo "다음 스텝: [$BUILT_AT]"
