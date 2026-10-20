@@ -1,0 +1,21 @@
+name: demo-inputs
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: 값 비교
+        run: |
+          echo "inputs:              ${{ inputs.dry_run }}"
+          echo "github.event.inputs: ${{ github.event.inputs.dry_run }}"
+      - name: inputs 로 분기
+        if: inputs.dry_run
+        run: echo "inputs 가 참으로 판정됨"
+      - name: github.event.inputs 로 분기
+        if: github.event.inputs.dry_run
+        run: echo "github.event.inputs 가 참으로 판정됨"
