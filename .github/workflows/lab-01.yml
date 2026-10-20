@@ -16,3 +16,7 @@ jobs:
           nproc
       - name: 작업 폴더 (코드 받기 전)
         run: ls -la
+      - name: 코드 받기
+        uses: actions/checkout@v7
+      - name: 작업 폴더 (코드 받은 후)
+        run: ls -la
